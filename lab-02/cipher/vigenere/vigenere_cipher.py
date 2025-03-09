@@ -1,4 +1,4 @@
-class VigenerCipher:
+class VigenereCipher:
     def __init__(self):
         pass
     
