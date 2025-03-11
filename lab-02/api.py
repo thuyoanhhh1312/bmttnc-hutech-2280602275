@@ -26,7 +26,7 @@ def caesar_decrypt():
     return jsonify({'decrypted_message': decrypted_text})
 
 #VIGENERE CIPHER
-vigenere_cipher = VigenerCipher()
+vigenere_cipher = VigenereCipher()
 
 @app.route("/api/vigenere/encrypt", methods=["POST"])
 def vigenere_encrypt():
