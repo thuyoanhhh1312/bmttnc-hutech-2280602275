@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from ui.rsa import Ui_MainWindow
 import requests
 
+
 class MyApp(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -39,7 +40,7 @@ class MyApp(QMainWindow):
             response = requests.post(url , json=payload)
             if response.status_code == 200:
                 data = response.json()
-                self.ui.txt_cipher_text.setText(data["encrypted_message"])
+                self.ui.txt_cipher_text.setPlainText(data["encrypted_message"])
 
                 msg = QMessageBox(self)
                 msg.setIcon(QMessageBox.Information)
@@ -60,7 +61,7 @@ class MyApp(QMainWindow):
             response = requests.post(url, json=payload)
             if response.status_code == 200:
                 data = response.json()
-                self.ui.txt_plain_text.setText(data["decrypted_message"])
+                self.ui.txt_plain_text.setPlainText(data["decrypted_message"])
 
                 msg = QMessageBox(self)
                 msg.setIcon(QMessageBox.Information)

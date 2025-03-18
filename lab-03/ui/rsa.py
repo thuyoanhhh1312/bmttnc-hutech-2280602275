@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui/rsa.ui'
+# Form implementation generated from reading ui file 'ui\rsa.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -9,8 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import os
-os.environ['QT_GPA_PLATFORM_PLUGIN_PATH'] = "C:/Users/DELL1/AppData/Roaming/Python/Python310/site-packages/PyQt5/Qt5/plugins/platforms"
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -145,3 +144,13 @@ class Ui_MainWindow(object):
         self.btn_sign.setText(_translate("MainWindow", "Sign"))
         self.btn_verify.setText(_translate("MainWindow", "Verify"))
         self.label_5.setText(_translate("MainWindow", "Signature:"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
