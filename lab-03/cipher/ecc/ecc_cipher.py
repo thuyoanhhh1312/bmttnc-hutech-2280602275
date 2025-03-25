@@ -18,11 +18,12 @@ class ECCCipher:
             p.write(vk.to_pem())
             
     def load_keys(self):
-        with open('cipher/ecc/keys/privateKey.pem', 'wb') as p:
+        # Sửa lại chế độ mở tệp thành 'rb' (read binary)
+        with open('cipher/ecc/keys/privateKey.pem', 'rb') as p:
             sk = ecdsa.SigningKey.from_pem(p.read())
             
-        with open('cipher/ecc/keys/publicKey.pem', 'wb') as p:
-            vk = ecdsa.SigningKey.from_pem(p.read())
+        with open('cipher/ecc/keys/publicKey.pem', 'rb') as p:
+            vk = ecdsa.VerifyingKey.from_pem(p.read())  # Sử dụng VerifyingKey thay vì SigningKey cho public key
         
         return sk, vk
     
