@@ -81,7 +81,7 @@ class MyApp(QMainWindow):
             response = requests.post(url, json=payload)
             if response.status_code == 200:
                 data = response.json()
-                self.ui.txt_signature.setText(data["signature"])
+                self.ui.txt_signature.setPlainText(data["signature"])
 
                 msg = QMessageBox(self)
                 msg.setIcon(QMessageBox.Information)
